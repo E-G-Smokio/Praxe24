@@ -8,8 +8,8 @@ autaList = [
     {'id' : 3, 'value' : 'G'}
 ]
 
-def home(request):
-    autooo = AutaModel.objects.all()
+def home(request, pk):
+    autooo = AutaModel.objects.get(id=pk)
     kontekext = {'autaList' : autooo}
     return render(request, 'homePage.html', kontekext)
 
