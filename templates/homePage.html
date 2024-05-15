@@ -1,3 +1,11 @@
-{% include 'navbar.html' %}
+{% extends 'main.html' %}
 
+
+{% block content %}
 <h1>AftoBazar</h1>
+    {% for xy in autaList %}
+    <div>
+        <p> {{xy.id}} -- {{xy.value}} </p>
+    </div>  
+    {% endfor %}
+{% endblock %}
