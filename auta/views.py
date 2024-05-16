@@ -6,7 +6,7 @@ from .models import AutaModel
 from django.views import generic
 
 class IndexView(generic.ListView):
-    templete_name = 'main.html'
+    template_name = 'main.html'
 
     def get_queryset(self):
         return AutaModel.objects.all()
