@@ -20,7 +20,6 @@ class AutaModel(models.Model):
     rok = models.IntegerField()
     popis = models.TextField(null=True, blank=True)
     datumPridani = models.DateField(auto_now=True)
-    znacka= models.CharField(choices=Znacky().TypeChoices())
-
+    
     def __str__(self):
         return self.model
