@@ -5,7 +5,7 @@
 <h1>AftoBazar</h1>
     {% for xy in autaList %}
     <div>
-        <p> {{xy.znacka}}, {{xy.model}}, rok {{xy.rok}}, <br> {{xy.popis}} </p>
+        <p><a href={autaList.id}> {{xy.znacka}} </a>, {{xy.model}}, rok {{xy.rok}}, <br> {{xy.popis}} </p>
         <hr>
     </div>  
     {% endfor %}
