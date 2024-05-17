@@ -1,16 +1,17 @@
 from typing import Any
 from django.db.models.query import QuerySet
 from django.shortcuts import render
-from django.http import HttpResponse
 from .models import AutaModel
 from django.views import generic
+from django.views.generic.list import ListView
 
-class IndexView(generic.ListView):
-    template_name = 'main.html'
+class IndexView(ListView):  
+    template_name = 'homePage.html'
+    context_object_name = 'vsechnyAuta'
 
     def get_queryset(self):
         return AutaModel.objects.all()
 
-class DetalView(generic.DetailView):
-    model = AutaModel
+class DetalView(generic.ListView):
     template_name = 'hello.html'
+    model = AutaModel
