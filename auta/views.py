@@ -12,6 +12,8 @@ class IndexView(ListView):
     def get_queryset(self):
         return AutaModel.objects.all()
 
-class DetalView(generic.ListView):
-    template_name = 'hello.html'
+class DetalView(generic.DetailView):
+    template_name = 'detail.html'
     model = AutaModel
+
+    

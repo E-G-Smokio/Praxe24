@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.contenttypes.fields import GenericForeignKey
 from django.contrib.contenttypes.models import ContentType
+from django.urls import reverse
 # Create your models here.
 
 ZnackyAut = (
@@ -23,3 +24,7 @@ class AutaModel(models.Model):
 
     def __str__(self):
         return self.znacka
+    
+    def get_absolute_url(self):
+        return reverse("model_detail", kwargs={"pk": self.id})
+    
