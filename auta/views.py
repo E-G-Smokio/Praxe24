@@ -17,3 +17,4 @@ class DetalView(generic.DetailView):
     model = AutaModel
 
     
+    

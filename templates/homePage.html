@@ -5,8 +5,9 @@
 <h1>AftoBazar</h1>
     {% for xy in vsechnyAuta %}
     <div>
-        <p>{{xy.id}}, {{xy.znacka}},<a href="{% url 'detailAuta' %}">{{xy.model}}</a>, rok {{xy.rok}}, <br> {{xy.popis}} </p>
+        <p>{{xy.id}}, {{xy.znacka}}, <a href="{% url 'detailAuta' xy.id %}">{{xy.model}}</a>, rok {{xy.rok}}, <br> {{xy.popis}} </p>
         <hr>
     </div>  
     {% endfor %}
+
 {% endblock %}
