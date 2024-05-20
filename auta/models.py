@@ -16,11 +16,12 @@ ZnackyAut = (
 
 class AutaModel(models.Model):
     znacka = models.CharField(max_length=10, choices=ZnackyAut, default='Vyber') 
-    id = models.PositiveIntegerField(primary_key=True, null=False, unique=True, auto_created=True)
+    id = models.PositiveIntegerField(primary_key=True, null=False, unique=True, blank= False)
     model = models.CharField(max_length=40)
     rok = models.IntegerField()
+    odkazOblazku = models.CharField(max_length=200, default='')
     popis = models.TextField(null=True, blank=True)
-    datumPridani = models.DateField()
+    datumPridani = models.DateField(auto_now=True)
 
     def __str__(self):
         return self.znacka
