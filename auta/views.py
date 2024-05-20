@@ -13,8 +13,6 @@ class IndexView(ListView):
         return AutaModel.objects.all()
 
 class DetalView(generic.DetailView):
-    template_name = 'detail.html'
     model = AutaModel
-
-    
+    template_name = 'detail.html'
     

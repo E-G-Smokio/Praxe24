@@ -1,2 +1,4 @@
 {% include 'navbar.html' %}
-<h1> {{context.id}} </h1>
+<h1> {{ object.id }}. {{ object.znacka }} {{ object.model }} </h1>
+<p>Rok výroby: {{ object.rok }}</p>
+<p>Popis: {{ object.popis }}</p>
