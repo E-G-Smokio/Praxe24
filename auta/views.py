@@ -6,7 +6,7 @@ from django.views import generic
 from django.views.generic.list import ListView
 
 class IndexView(ListView):  
-    template_name = 'homePage.html'
+    template_name = 'auta/homePage.html'
     context_object_name = 'vsechnyAuta'
 
     def get_queryset(self):
@@ -14,5 +14,5 @@ class IndexView(ListView):
 
 class DetalView(generic.DetailView):
     model = AutaModel
-    template_name = 'detail.html'
+    template_name = 'auta/detail.html'
     
