@@ -1,0 +1,9 @@
+<h1>Registrace</h1>
+
+<form method="POST" autocomplete="off">
+
+    {% csrf_token %}
+
+    {{registerform.as_p}}
+
+</form>

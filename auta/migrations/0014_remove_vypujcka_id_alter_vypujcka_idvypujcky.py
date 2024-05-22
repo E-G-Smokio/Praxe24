@@ -7,17 +7,23 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('auta', '0013_remove_autamodel_datumpridani'),
+        ("auta", "0013_remove_autamodel_datumpridani"),
     ]
 
     operations = [
         migrations.RemoveField(
-            model_name='vypujcka',
-            name='id',
+            model_name="vypujcka",
+            name="id",
         ),
         migrations.AlterField(
-            model_name='vypujcka',
-            name='idVypujcky',
-            field=models.UUIDField(default='', primary_key=True, serialize=False, unique=True, verbose_name=uuid.uuid4),
+            model_name="vypujcka",
+            name="idVypujcky",
+            field=models.UUIDField(
+                default="",
+                primary_key=True,
+                serialize=False,
+                unique=True,
+                verbose_name=uuid.uuid4,
+            ),
         ),
     ]
