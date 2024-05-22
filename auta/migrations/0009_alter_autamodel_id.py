@@ -6,13 +6,15 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('auta', '0008_alter_autamodel_id'),
+        ("auta", "0008_alter_autamodel_id"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='autamodel',
-            name='id',
-            field=models.UUIDField(auto_created=True, primary_key=True, serialize=False),
+            model_name="autamodel",
+            name="id",
+            field=models.UUIDField(
+                auto_created=True, primary_key=True, serialize=False
+            ),
         ),
     ]

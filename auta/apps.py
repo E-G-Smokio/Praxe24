@@ -2,5 +2,5 @@ from django.apps import AppConfig
 
 
 class AutaConfig(AppConfig):
-    default_auto_field = 'django.db.models.BigAutoField'
-    name = 'auta'
+    default_auto_field = "django.db.models.BigAutoField"
+    name = "auta"

@@ -6,18 +6,31 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('auta', '0004_autamodel_znacka'),
+        ("auta", "0004_autamodel_znacka"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='autamodel',
-            name='id',
-            field=models.PositiveIntegerField(auto_created=True, primary_key=True, serialize=False, unique=True),
+            model_name="autamodel",
+            name="id",
+            field=models.PositiveIntegerField(
+                auto_created=True, primary_key=True, serialize=False, unique=True
+            ),
         ),
         migrations.AlterField(
-            model_name='autamodel',
-            name='znacka',
-            field=models.CharField(choices=[('Opel', 'OPL'), ('Skoda', 'SKD'), ('BMW', 'BMW'), ('Ford', 'FRD'), ('Nissan', 'NSN'), ('Honda', 'HND')], default='Vyber', max_length=10),
+            model_name="autamodel",
+            name="znacka",
+            field=models.CharField(
+                choices=[
+                    ("Opel", "OPL"),
+                    ("Skoda", "SKD"),
+                    ("BMW", "BMW"),
+                    ("Ford", "FRD"),
+                    ("Nissan", "NSN"),
+                    ("Honda", "HND"),
+                ],
+                default="Vyber",
+                max_length=10,
+            ),
         ),
     ]

@@ -6,13 +6,24 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('auta', '0003_delete_znacky_alter_autamodel_datumpridani'),
+        ("auta", "0003_delete_znacky_alter_autamodel_datumpridani"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='autamodel',
-            name='znacka',
-            field=models.CharField(choices=[('OPL', 'Opel'), ('SKD', 'Skoda'), ('BMW', 'Bmw'), ('FRD', 'Ford'), ('NSN', 'Nissan'), ('HND', 'Honda')], default='Vyber', max_length=10),
+            model_name="autamodel",
+            name="znacka",
+            field=models.CharField(
+                choices=[
+                    ("OPL", "Opel"),
+                    ("SKD", "Skoda"),
+                    ("BMW", "Bmw"),
+                    ("FRD", "Ford"),
+                    ("NSN", "Nissan"),
+                    ("HND", "Honda"),
+                ],
+                default="Vyber",
+                max_length=10,
+            ),
         ),
     ]
