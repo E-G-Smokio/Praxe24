@@ -5,15 +5,14 @@ from django import forms
 
 from django.forms.widgets import PasswordInput, TextInput
 
+
 class CreateUserForm(UserCreationForm):
 
     class Meta:
 
         model = User
-        fields = ["username", "email"]
-        widgets = {
-            'password' : forms.PasswordInput()
-        }
+        fields = ["first_name", "last_name" ,"username", "email"]
+        widgets = {"password": forms.PasswordInput()}
 
 
 class LoginForm(AuthenticationForm):

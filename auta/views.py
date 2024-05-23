@@ -10,6 +10,7 @@ from django.urls import reverse_lazy
 from django.contrib.auth.models import auth
 from django.contrib.auth import authenticate, login, logout
 
+
 class IndexView(ListView):
     template_name = "auta/homePage.html"
     context_object_name = "vsechnyAuta"
@@ -21,6 +22,7 @@ class IndexView(ListView):
 class DetalView(generic.DetailView):
     model = AutaModel
     template_name = "auta/detail.html"
+
 
 """
 def register(request):
@@ -65,12 +67,14 @@ def my_login(request):
 
     """
 
+
 class Register(generic.CreateView):
-    #model = User
+    # model = User
     form_class = CreateUserForm
-    template_name = 'auta/register.html'
-    success_url = reverse_lazy('logPage')
+    template_name = "auta/register.html"
+    success_url = reverse_lazy("logPage")
+
 
 class MyLogin(LoginView):
-    template_name = 'auta/my-login.html'
-    reverse_lazy('HomePage')
+    template_name = "auta/my-login.html"
+    reverse_lazy("HomePage")
