@@ -1,6 +1,17 @@
 <div>
     <a href="/">Domov</a>
-    <a href="register/">Registrovat se</a>
-    <a href="login/">Přihlásit se</a>
-    <a href="#">Kongtakty</a>
+
+    {% if user.is_authenticated %}
+
+        <a href="{% url 'userView' user.id %}">{{ user.first_name }}</a>
+        
+
+
+    {% else %}
+    
+        <a href="register/">Registrovat se</a>
+        <a href="login/">Přihlásit se</a>
+
+    {% endif %}
+    
 </div>

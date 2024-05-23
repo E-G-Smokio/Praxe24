@@ -1,0 +1,14 @@
+{% extends 'auta/main.html' %}
+
+
+{% block content %}
+<h1>{{ user.username }}</h1>
+<p>Jméno: {{ user.first_name }}</p>
+<p>Příjmení: {{ user.last_name }}</p>
+<p>Email: {{ user.email }}</p>
+
+<form method="POST" action="{% url 'logOut' %}">
+    {%csrf_token%}
+    <input type="submit" value="Odhlasit se">
+</form>
+{% endblock %}

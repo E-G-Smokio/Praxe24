@@ -3,12 +3,12 @@ from django.shortcuts import render, redirect
 from .models import *
 from django.views import generic
 from django.views.generic.list import ListView
-from django.contrib.auth.views import LoginView
-from .forms import CreateUserForm, LoginForm
+from django.contrib.auth.views import LoginView, LogoutView
+from .forms import CreateUserForm, LoginForm, User
 
 from django.urls import reverse_lazy
 from django.contrib.auth.models import auth
-from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth import logout
 
 
 class IndexView(ListView):
@@ -57,24 +57,37 @@ def my_login(request):
 
             if user is not None:
                 
-                auth.login()
+                login(request, user)
 
-                return redirect('/')
-    
+                return HttpResponse("Funguju")
+            
+            else:
+
+                HttpResponse("Nefunguju /:")
+
     context = {'loginform':form}
 
     return render(request, 'auta/my-login.html', context)
 
-    """
+"""
 
 
 class Register(generic.CreateView):
-    # model = User
+    model = User
     form_class = CreateUserForm
     template_name = "auta/register.html"
     success_url = reverse_lazy("logPage")
 
 
 class MyLogin(LoginView):
+    form_class = LoginForm
     template_name = "auta/my-login.html"
-    reverse_lazy("HomePage")
+    success_url = reverse_lazy("HomePage")
+
+class MyLogout(LogoutView):
+    next_page = reverse_lazy("HomePage")
+
+class UserView(generic.DetailView):
+    model = User
+    template_name = "auta/detailUzivatel.html"
+    context_object_name = 'user'
