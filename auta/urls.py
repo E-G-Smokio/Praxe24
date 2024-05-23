@@ -5,6 +5,7 @@ from django.views.generic import TemplateView
 # URL konfigurace
 urlpatterns = [
     path("", views.IndexView.as_view(), name="HomePage"),
-    path("register/", views.CreateUserForm, name="register"),
+    path("register/", views.Register.as_view(), name="register"),
+    path("login/", views.MyLogin.as_view(), name="logPage"),
     path("<slug:pk>/", views.DetalView.as_view(), name="detailAuta"),
 ]
