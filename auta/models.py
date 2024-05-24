@@ -35,7 +35,7 @@ class AutaModel(models.Model):
     vypujceno = models.BooleanField(default=False)
 
     def __str__(self):
-        if Vypujcka == True:
+        if self.vypujceno == True:
             return self.znacka + ", " + self.model + " AKTUÁLNĚ VYPŮJČENO"
         else:
             return self.znacka + ", " + self.model + " DOSTUPNÉ"

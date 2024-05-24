@@ -1,6 +1,6 @@
 {% include 'auta/navbar.html' %}
 <h1> {{ object.id }}. {{ object.znacka }} {{ object.model }} </h1>
 <p>Rok výroby: {{ object.rok }}</p>
-<img src="{{ object.odkazOblazku }}" style="width:480px"></img>
-<p>Popis: {{ object.popis }}</p>
+<img src="{{ object.auto_oblazek }}" style="width:480px"></img>
+<p>Popis: {{ object.popis }}, {{object.vypujceno}}</p>
 <p>Přidáno: {{ object.datumPridani }}</p>
